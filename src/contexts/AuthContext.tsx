@@ -17,11 +17,16 @@ type AuthContextType = {
   signInWithGoogle: (callback?: (user: User) => void) => Promise<void>
 }
 
+//DO REACT cria o componente que permite o acesso as informações de contexto para as children
 export const AuthContext = createContext({} as AuthContextType)
+
+
 export function AuthContextProvider(props: AuthContextProviderProps) {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
+    //unsubscribe serve para parar de ouvir as mudanças referentes ao user
+    //onAuthStateChanged é responsavel por ouvir se houve mudança no user
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         const { displayName, photoURL, uid } = user;
@@ -35,6 +40,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
         });
       }
     })
+    //cleanup function
     return () => {
       unsubscribe();
     };
