@@ -5,19 +5,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyle from "./styles/global"
 import regular from "./styles/themes/regular"
 import { AuthContextProvider } from "./contexts/AuthContext";
+import { NotesProvider } from "./contexts/NotesContext"
 
 
 function App() {
   return (
     <BrowserRouter>
       <AuthContextProvider>
-        <ThemeProvider theme={regular}>
-          <GlobalStyle />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/workspace" element={<Workspace />} />
-          </Routes>
-        </ThemeProvider>
+        <NotesProvider>
+          <ThemeProvider theme={regular}>
+            <GlobalStyle />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/workspace" element={<Workspace />} />
+            </Routes>
+          </ThemeProvider>
+        </NotesProvider>
       </AuthContextProvider>
     </BrowserRouter>
   );

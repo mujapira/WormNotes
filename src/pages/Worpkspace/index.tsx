@@ -1,7 +1,7 @@
-import { CreateNote } from "./CreateNote";
+import { Sidebar } from "./Sidebar";
 
 export function Workspace(){
     return (
-        <CreateNote/>
+        <Sidebar/>
     )
 }
