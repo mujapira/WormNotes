@@ -2,7 +2,6 @@ import { onValue, ref, off, set, push } from 'firebase/database';
 import { createContext, ReactNode, useEffect, useState } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
 import { database } from '../services/firebase';
-import { v4 as uuidv4 } from 'uuid';
 
 export interface Note {
     id: string;
@@ -23,10 +22,11 @@ export type NotesData = {
     items: Note[];
     create: () => void;
     current?: Note;
+    navigate: (id: string) => void;
+    showAsHtml: boolean;
 
-    /*    showAsHtml: boolean;
+    /*
        update: (note: Partial<Note>) => void;
-        navigate: (id: string) => void;
        deleteById: (id: string) => void;
        toggleShowAsHtml: () => void; */
 }
@@ -38,6 +38,7 @@ const UNTITLED_NOTE_TITLE = 'Untitled';
 export function NotesProvider({ children }: NotesProviderProps) {
     const [current, setCurrent] = useState<Note>();
     const [notes, setNotes] = useState<Note[]>([]);
+    const [showAsHtml, setShowAsHtml] = useState(false);
 
     useEffect(() => {
         const notesRef = ref(database, `notes/`)
@@ -62,7 +63,7 @@ export function NotesProvider({ children }: NotesProviderProps) {
             const lastNote = parsedNotes[parsedNotes.length - 1]
             setNotes(parsedNotes)
             setCurrent(lastNote)
-        }) 
+        })
         return () => {
             off(notesRef)
         }
@@ -79,12 +80,23 @@ export function NotesProvider({ children }: NotesProviderProps) {
         push(ref(database, 'notes/'), note)
     }
 
+    
+  function navigate(id: string): void {
+    const note = notes.find((note) => note.id === id);
+    if (!note) return;
+    setShowAsHtml(false);
+    setCurrent(note);
+  }
+
+
     return (
         <NotesContext.Provider
             value={{
                 items: notes,
                 current,
                 create,
+                navigate,
+                showAsHtml,
             }}
         >
             {children}

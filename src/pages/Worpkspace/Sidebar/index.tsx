@@ -10,10 +10,9 @@ export function Sidebar() {
     notes.create();
   }
  function handleNoteClick(id: string) {
-  
+  notes.navigate(id);
   }
  
-
   return (
     <>
       <S.Wrapper>
