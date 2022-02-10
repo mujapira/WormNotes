@@ -3,13 +3,15 @@ import { Header } from "./Header"
 import { CreateNote } from "../CreateNote"
 import { useNotes } from '../../../hooks/useNotes';
 import React, { useEffect, useRef } from 'react';
+import { ref, update } from 'firebase/database';
+import { database } from '../../../services/firebase';
 
 export function EditNote() {
 
     const notes = useNotes()
     const titleRef = useRef<HTMLTextAreaElement>(null)
     const { current } = notes
-    const isNoteUntitled = current?.title === "untitled"
+    const isNoteUntitled = current?.title === "Untitled"
 
     useEffect(() => {
         if (!current) return
@@ -26,7 +28,8 @@ export function EditNote() {
     function handleTitleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         e.target.value = e.target.value.replace(/\n/g, '');
         const value = e.target.value;
-        notes.update({ ...current, title: value });
+        notes.update({ ...current, title: value })
+
     }
 
     function handleContentChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
