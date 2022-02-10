@@ -1,7 +1,17 @@
 import { Sidebar } from "./Sidebar";
+import { CreateNote } from "./CreateNote";
+import { EditNote } from "./EditNote"
+import * as S from './styles';
 
-export function Workspace(){
+export function Workspace() {
     return (
-        <Sidebar/>
+        <>
+            <S.Wrapper>
+                <Sidebar />
+                <S.Content>
+                    <EditNote />
+                </S.Content>
+            </S.Wrapper>
+        </>
     )
 }

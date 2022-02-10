@@ -5,7 +5,7 @@ display: flex;
 flex-direction: row;
 height: 100vh;
 width: 30rem;
-background-color: ${props => props.theme.colors.backgroundLight};
+background-color: ${props => props.theme.colors.backgroundDark};
 border-right: 2px solid ${props => props.theme.colors.primary};
 `
 

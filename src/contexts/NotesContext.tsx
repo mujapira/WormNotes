@@ -24,9 +24,9 @@ export type NotesData = {
     current?: Note;
     navigate: (id: string) => void;
     showAsHtml: boolean;
+    update: (note: Partial<Note>) => void;
 
     /*
-       update: (note: Partial<Note>) => void;
        deleteById: (id: string) => void;
        toggleShowAsHtml: () => void; */
 }
@@ -80,14 +80,33 @@ export function NotesProvider({ children }: NotesProviderProps) {
         push(ref(database, 'notes/'), note)
     }
 
-    
-  function navigate(id: string): void {
-    const note = notes.find((note) => note.id === id);
-    if (!note) return;
-    setShowAsHtml(false);
-    setCurrent(note);
-  }
 
+    function navigate(id: string): void {
+        const note = notes.find((note) => note.id === id);
+        if (!note) return;
+        setShowAsHtml(false);
+        setCurrent(note);
+    }
+
+    function update(note: Partial<Note>): void {
+        const now = new Date()
+        if (!note.title?.trim().length) {
+            note.title = UNTITLED_NOTE_TITLE
+        }
+        setCurrent((prevCurrent) => {
+            if (!prevCurrent) return
+            const updatedNote = {
+                ...prevCurrent,
+                ...note,
+                updatedAt: now,
+            }
+            setNotes((prevNotes) => {
+                return prevNotes.map((prevNote) =>
+                    prevNote.id === prevCurrent.id ? updatedNote : prevNote)
+            })
+            return updatedNote
+        })
+    }
 
     return (
         <NotesContext.Provider
@@ -96,6 +115,7 @@ export function NotesProvider({ children }: NotesProviderProps) {
                 current,
                 create,
                 navigate,
+                update,
                 showAsHtml,
             }}
         >
