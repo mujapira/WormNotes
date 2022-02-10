@@ -17,5 +17,8 @@ export function CreateNote() {
                 </S.Button>
             </S.Wrapper>
         </>
+
+
+
     )
 }

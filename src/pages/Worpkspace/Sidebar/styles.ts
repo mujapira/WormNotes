@@ -6,7 +6,6 @@ flex-direction: row;
 height: 100vh;
 width: 30rem;
 background-color: ${props => props.theme.colors.backgroundDark};
-border-right: 2px solid ${props => props.theme.colors.primary};
 `
 
 export const Content = styled.div`
@@ -30,8 +29,6 @@ justify-content: center;
 align-items: center;
 `
 
-
-
 export const NoteList = styled.div`
 display: flex;
 flex-direction: column;
@@ -39,6 +36,7 @@ margin-top: 2rem;
 `
 
 export const NoteItem = styled.button`
+color:${props => props.theme.colors.secundary};
 text-align: center;
 width: 100%;
 height: 4rem;
@@ -57,12 +55,12 @@ width: fit-content;
 border-radius: 0.4rem;
 padding: 0 2rem;
 border: none;
+color:${props => props.theme.colors.secundary};
 background: ${props => props.theme.colors.primary};
 cursor: pointer;
 `
 export const Separator = styled.hr`
-
-border-top: 1px solid ${props => props.theme.colors.primary};
+border-top: 1px solid ${props => props.theme.colors.separtor};
 width: 30rem;
 
 `

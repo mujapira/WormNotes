@@ -1,5 +1,4 @@
 import { Sidebar } from "./Sidebar";
-import { CreateNote } from "./CreateNote";
 import { EditNote } from "./EditNote"
 import * as S from './styles';
 

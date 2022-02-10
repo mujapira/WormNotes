@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
     height: 100vh;
     font-size: 1.6rem;
     background: ${props => props.theme.colors.backgroundDark};
+    color: ${props => props.theme.colors.secundary};
 
     @media (max-width:1000px){
         flex-direction: column;
@@ -79,12 +80,14 @@ export const Button = styled.button`
     cursor: pointer;
     border-radius: 8px;
     font-weight: 500;
+    border: none;
 `
 
 export const Span = styled.span`
     margin-right: 8px;
     font-size: 1.2rem;
-	font-weight: 500;
+	font-weight: 300;
+    color: ${props => props.theme.colors.secundary};
 `
 
 export const Img = styled.img`

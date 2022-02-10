@@ -7,7 +7,6 @@ margin-top: -4.8rem;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-background-color: ${props => props.theme.backgroundLight};
 `
 
 export const Title = styled.h1`
@@ -23,6 +22,7 @@ font-size: 1.6rem;
 border: none;
 border-radius: 0.5rem;
 background-color: ${props => props.theme.colors.primary};
+color: ${props => props.theme.colors.secundary};
 font-weight: bold;
 margin-top: 2rem;
 `

@@ -7,7 +7,7 @@ import React, { useEffect, useRef } from 'react';
 export function EditNote() {
 
     const notes = useNotes()
-    const titleRef = useRef<HTMLTemplateElement>(null)
+    const titleRef = useRef<HTMLTextAreaElement>(null)
     const { current } = notes
     const isNoteUntitled = current?.title === "untitled"
 
@@ -22,10 +22,15 @@ export function EditNote() {
         return <CreateNote />
     }
 
+
     function handleTitleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
-        e.target.value = e.target.value.replace(/\n/g, "")
-        const value = e.target.value
-        notes.update({...current, content: e.target.value})
+        e.target.value = e.target.value.replace(/\n/g, '');
+        const value = e.target.value;
+        notes.update({ ...current, title: value });
+    }
+
+    function handleContentChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+        notes.update({ ...current, content: e.target.value });
     }
 
     return (
@@ -34,12 +39,24 @@ export function EditNote() {
             <S.ScrollContainer>
                 <S.Content>
                     <S.TitleInput
-                        placeholder='Current Title'
+                        ref={titleRef}
+                        value={isNoteUntitled ? "" : current.title}
+                        onChange={handleTitleChange}
+                        placeholder={current.title}
                     />
-                    <S.ContentInput placeholder='Start Typing' />
+                    {!notes.showAsHtml && (
+                        <S.ContentInput
+                            onChange={handleContentChange}
+                            placeholder='Start Typing'
+                            value={current.content}
+                        />
+                    )}
+                    {notes.showAsHtml && (
+                        <S.ContentAsHtml
+                        />
+                    )}
                 </S.Content>
             </S.ScrollContainer>
-            <S.ContentAsHtml />
         </S.Wrapper>
     )
 }

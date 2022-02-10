@@ -4,7 +4,7 @@ export default {
     backgroundDark: "#2f3437",
     backgroundLight: "#373c3f",
     primary: "#589879",
-    secundary: "",
-    separtor: "#878b8d",
+    secundary: "#EAEBEB",
+    separtor: "##373C3F",
   }
 }
