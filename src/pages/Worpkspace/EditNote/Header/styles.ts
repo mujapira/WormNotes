@@ -7,8 +7,28 @@ display: column;
 align-items: center;
 padding: 1rem 2rem;
 height: ${EDIT_NOTE_HEADER_HEIGHT};
-
 `
+
+export const UserInfo = styled.button`
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 1rem;
+background: transparent;
+display:flex;
+width: 2.5rem;
+height: 2.5rem;
+border: none;
+border-radius: 5rem;
+cursor: pointer;
+`
+
+export const UserImg = styled.img`
+display: flex;
+border-radius: 5rem;
+overflow: hidden;
+`
+
 export const Title = styled.h4`
 font-size: 1.8rem;
 font-weight:normal;
@@ -20,10 +40,12 @@ overflow: hidden;
 
 export const Menu = styled.nav`
 display: flex;
-gap: 2rem;
+gap: 1.5rem;
 
 `
 export const ToggleHTML = styled.button`
+margin-top: -3px;
+
 border-radius: 1rem;
 width: 4rem;
 height: 3rem;

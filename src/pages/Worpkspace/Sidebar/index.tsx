@@ -1,6 +1,5 @@
 import * as S from './styles';
 import WormLogo from "../../../assets/images/WormNotesLogo.svg"
-import { useAuth } from '../../../hooks/useAuth';
 import { useNotes } from '../../../hooks/useNotes';
 
 export function Sidebar() {

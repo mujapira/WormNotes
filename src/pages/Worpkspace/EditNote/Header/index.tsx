@@ -6,14 +6,17 @@ import { AiOutlineUnorderedList } from 'react-icons/ai'
 
 import { DropDown } from './DropDown';
 import { useState } from 'react';
+import { useAuth } from '../../../../hooks/useAuth';
 
 export function Header() {
     const notes = useNotes()
+    const userinfo = useAuth()
     const { current } = notes
     const [open, setOpen] = useState(false)
 
 
     function handleToggleShowAsHtml() {
+        notes.toggleShowAsHtml();
     }
 
     if (!current) return null
@@ -24,6 +27,9 @@ export function Header() {
                 <S.Um>
                     <S.Title>{current.title}</S.Title>
                     <S.Menu>
+                        <S.UserInfo>
+                            <S.UserImg src={userinfo.user?.avatar}/>      
+                        </S.UserInfo>
                         <S.ToggleHTML onClick={handleToggleShowAsHtml}>
                             {notes.showAsHtml ? <AiFillEye size={25} /> : <RiEyeCloseLine size={25} />}
                         </S.ToggleHTML>

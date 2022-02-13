@@ -3,9 +3,7 @@ import { Header } from "./Header"
 import { CreateNote } from "../CreateNote"
 import { useNotes } from '../../../hooks/useNotes';
 import React, { useEffect, useRef } from 'react';
-import { ref, update } from 'firebase/database';
-import { database } from '../../../services/firebase';
-
+import { marked } from "marked"
 export function EditNote() {
 
     const notes = useNotes()
@@ -24,12 +22,10 @@ export function EditNote() {
         return <CreateNote />
     }
 
-
     function handleTitleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         e.target.value = e.target.value.replace(/\n/g, '');
         const value = e.target.value;
         notes.update({ ...current, title: value })
-
     }
 
     function handleContentChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -39,7 +35,6 @@ export function EditNote() {
     return (
         <S.Wrapper>
             <Header />
-            <S.ScrollContainer>
                 <S.Content>
                     <S.TitleInput
                         ref={titleRef}
@@ -56,10 +51,11 @@ export function EditNote() {
                     )}
                     {notes.showAsHtml && (
                         <S.ContentAsHtml
+                            dangerouslySetInnerHTML=
+                            {{ __html: marked.parse(current.content) }}
                         />
                     )}
                 </S.Content>
-            </S.ScrollContainer>
         </S.Wrapper>
     )
 }
