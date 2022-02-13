@@ -10,7 +10,8 @@ export const ScrollContainer = styled.div`
 
 `
 
-export const Content = styled.div`background: transparent;
+export const Content = styled.div`
+background: transparent;
 display: flex;
 flex-direction: column;
 margin:auto;
@@ -37,6 +38,7 @@ color:${props => props.theme.colors.secundary};
 
 export const ContentInput = styled.textarea`
 border:none;
+resize: none;
 flex: 1;
 line-height: 2.4rem;
 background: transparent;

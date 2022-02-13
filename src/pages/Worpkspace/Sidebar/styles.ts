@@ -62,7 +62,6 @@ cursor: pointer;
 export const Separator = styled.hr`
 border-top: 1px solid ${props => props.theme.colors.separtor};
 width: 30rem;
-
 `
 
 

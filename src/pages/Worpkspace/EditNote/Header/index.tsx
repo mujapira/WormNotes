@@ -1,12 +1,17 @@
-import { updateCurrentUser } from 'firebase/auth';
 import { useNotes } from '../../../../hooks/useNotes';
 import * as S from './styles';
-import {EyeOutline} from "@styled-icons/evaicons-outline/EyeOutline"
-import {EyeOff2Outline} from "@styled-icons/evaicons-outline/EyeOff2Outline"
+import { AiFillEye } from 'react-icons/ai'
+import { RiEyeCloseLine } from 'react-icons/ri'
+import { AiOutlineUnorderedList } from 'react-icons/ai'
+
+import { DropDown } from './DropDown';
+import { useState } from 'react';
 
 export function Header() {
     const notes = useNotes()
     const { current } = notes
+    const [open, setOpen] = useState(false)
+
 
     function handleToggleShowAsHtml() {
     }
@@ -14,12 +19,23 @@ export function Header() {
     if (!current) return null
 
     return (
-        <S.Header>
-            <S.Title>{current.title}</S.Title>
-            <S.Menu>
-                <S.MenuButton onClick={handleToggleShowAsHtml}>
-                </S.MenuButton>
-            </S.Menu >
-        </S.Header >
+        <>
+            <S.Header>
+                <S.Title>{current.title}</S.Title>
+                <S.Menu>
+                    <S.ToggleHTML onClick={handleToggleShowAsHtml}>
+                        {notes.showAsHtml ? <AiFillEye size={25} /> : <RiEyeCloseLine size={25} />}
+                    </S.ToggleHTML>
+                    <S.ToggleDropDown onClick={() => setOpen(!open)}>
+                        <AiOutlineUnorderedList size={25} />
+                    </S.ToggleDropDown>
+
+                </S.Menu >
+            {!open &&
+                <DropDown />
+            }
+            </S.Header >
+        </>
+
     )
 }

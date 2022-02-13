@@ -1,4 +1,4 @@
-import { onValue, ref, off, set, push, update as fbUpdate } from 'firebase/database';
+import { onValue, ref, off, remove as fbRemove, push, update as fbUpdate } from 'firebase/database';
 import { createContext, ReactNode, useEffect, useState } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
 import { database } from '../services/firebase';
@@ -20,14 +20,13 @@ type FirebaseNotes = Record<string, Omit<Note, "id">>
 
 export type NotesData = {
     items: Note[];
-    create: () => void;
     current?: Note;
-    navigate: (id: string) => void;
     showAsHtml: boolean;
+    navigate: (id: string) => void;
+    create: () => void;
     update: (note: Partial<Note>) => void;
-    deleteById: (id: string) => void;
-    /*
-    toggleShowAsHtml: () => void; */
+    deleteById: (note: Partial<Note>) => void;
+    toggleShowAsHtml: () => void;
 }
 
 export const NotesContext = createContext<NotesData>({} as NotesData);
@@ -75,7 +74,7 @@ export function NotesProvider({ children }: NotesProviderProps) {
             updatedAt: dateNow,
         };
         await push(ref(database, 'notes/'), note)
-
+        setShowAsHtml(false);
         const lastNote = notes[notes.length - 1]
         setCurrent(lastNote)
     }
@@ -93,24 +92,28 @@ export function NotesProvider({ children }: NotesProviderProps) {
         if (!note.title?.trim().length) {
             note.title = UNTITLED_NOTE_TITLE
         }
-            setCurrent((prevCurrent) => {
-                if (!prevCurrent) return
-                const updatedNote = {
-                    ...prevCurrent,
-                    ...note,
-                    updatedAt: now,
-                }
-                return updatedNote
-            })
-
+        setCurrent((prevCurrent) => {
+            if (!prevCurrent) return
+            const updatedNote = {
+                ...prevCurrent,
+                ...note,
+                updatedAt: now,
+            }
+            return updatedNote
+        })
         fbUpdate(ref(database, `notes/${note?.id}`), note)
     }
 
-    function deleteById(id: string): void {
-        setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id))
-        if (current?.id === id) {
+    function deleteById(note: Partial<Note>): void {
+        setNotes((prevNotes) => prevNotes.filter((note) => note.id !== note.id))
+        if (current?.id === note.id) {
             setCurrent(undefined)
+            fbRemove(ref(database, `notes/${note?.id}`))
         }
+    }
+
+    function toggleShowAsHtml(): void {
+        setShowAsHtml(!showAsHtml);
     }
 
     return (
@@ -118,11 +121,12 @@ export function NotesProvider({ children }: NotesProviderProps) {
             value={{
                 items: notes,
                 current,
+                showAsHtml,
                 deleteById,
                 create,
                 navigate,
                 update,
-                showAsHtml,
+                toggleShowAsHtml,
             }}
         >
             {children}
