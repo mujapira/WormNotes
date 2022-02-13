@@ -21,7 +21,6 @@ export function DropDown() {
         : updatedAt.format('YYYY/MM/DD');
 
     return (
-      
             <S.Wrapper>
                 <S.DeleteButton onClick={handleDelete}>
                     Delete Note

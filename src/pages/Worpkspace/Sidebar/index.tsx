@@ -27,10 +27,10 @@ export function Sidebar() {
               {note.title}
             </S.NoteItem>
             ))}
+          </S.NoteList>
             <S.NewNoteButton onClick={(handleCreateNoteClick)}>
               + Add a note
             </S.NewNoteButton>
-          </S.NoteList>
         </S.Content>
       </S.Wrapper>
     </>

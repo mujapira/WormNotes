@@ -27,6 +27,7 @@ font-size:2rem;
 margin:2rem;
 justify-content: center;
 align-items: center;
+
 `
 
 export const NoteList = styled.div`

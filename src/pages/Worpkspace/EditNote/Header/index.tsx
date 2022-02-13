@@ -21,19 +21,22 @@ export function Header() {
     return (
         <>
             <S.Header>
-                <S.Title>{current.title}</S.Title>
-                <S.Menu>
-                    <S.ToggleHTML onClick={handleToggleShowAsHtml}>
-                        {notes.showAsHtml ? <AiFillEye size={25} /> : <RiEyeCloseLine size={25} />}
-                    </S.ToggleHTML>
-                    <S.ToggleDropDown onClick={() => setOpen(!open)}>
-                        <AiOutlineUnorderedList size={25} />
-                    </S.ToggleDropDown>
-
-                </S.Menu >
-            {!open &&
-                <DropDown />
-            }
+                <S.Um>
+                    <S.Title>{current.title}</S.Title>
+                    <S.Menu>
+                        <S.ToggleHTML onClick={handleToggleShowAsHtml}>
+                            {notes.showAsHtml ? <AiFillEye size={25} /> : <RiEyeCloseLine size={25} />}
+                        </S.ToggleHTML>
+                        <S.ToggleDropDown onClick={() => setOpen(!open)}>
+                            <AiOutlineUnorderedList size={25} />
+                        </S.ToggleDropDown>
+                    </S.Menu >
+                </S.Um>
+                <S.Dois>
+                    {!open &&
+                        <DropDown />
+                    }
+                </S.Dois>
             </S.Header >
         </>
 

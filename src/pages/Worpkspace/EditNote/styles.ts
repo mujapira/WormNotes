@@ -14,7 +14,7 @@ export const Content = styled.div`
 background: transparent;
 display: flex;
 flex-direction: column;
-margin:auto;
+margin-left: 1rem;
 `
 
 export const TextArea = styled.textarea`
