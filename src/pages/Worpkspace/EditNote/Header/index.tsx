@@ -14,7 +14,6 @@ export function Header() {
     const { current } = notes
     const [open, setOpen] = useState(false)
 
-
     function handleToggleShowAsHtml() {
         notes.toggleShowAsHtml();
     }
@@ -28,7 +27,7 @@ export function Header() {
                     <S.Title>{current.title}</S.Title>
                     <S.Menu>
                         <S.UserInfo>
-                            <S.UserImg src={userinfo.user?.avatar}/>      
+                            <S.UserImg src={userinfo.user?.avatar} />
                         </S.UserInfo>
                         <S.ToggleHTML onClick={handleToggleShowAsHtml}>
                             {notes.showAsHtml ? <AiFillEye size={25} /> : <RiEyeCloseLine size={25} />}

@@ -25,4 +25,5 @@ background-color: ${props => props.theme.colors.primary};
 color: ${props => props.theme.colors.secundary};
 font-weight: bold;
 margin-top: 2rem;
+cursor:pointer;
 `

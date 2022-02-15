@@ -10,7 +10,7 @@ export function Home() {
 
     function handleLogIn() {
         signInWithGoogle(() => {
-            navigate(`workspace`)
+            navigate(`/workspace`)
         })
     }
 
