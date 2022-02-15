@@ -27,9 +27,25 @@ export const AsideDiv = styled.div`
     }
 `
 
+export const Circle = styled.div`
+background-color:  ${props => props.theme.colors.primary};
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+width: 500px;
+height: 500px;
+@media (max-width:500px){
+    flex: unset;
+    width: 300px;
+    height: 300px;
+    }
+`
+
+
 export const WormImage = styled.img`
-    max-width: 40%;
-    height: 100%;
+    max-width: 50%;
+    height: 50%;
     padding:10px;
 
     @media (max-width:1000px){

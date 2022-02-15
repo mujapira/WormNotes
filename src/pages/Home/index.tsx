@@ -17,7 +17,9 @@ export function Home() {
     return (
         <S.Wrapper>
             <S.AsideDiv >
-                <S.WormImage src={wormLogoImg} alt="WormNotes Logo" />
+                <S.Circle>
+                    <S.WormImage src={wormLogoImg} alt="WormNotes Logo" />
+                </S.Circle>
             </S.AsideDiv>
             <S.Main>
                 <S.Strong> Welcome to WormNotes</S.Strong>

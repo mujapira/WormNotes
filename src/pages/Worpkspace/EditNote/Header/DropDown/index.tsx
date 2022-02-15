@@ -5,14 +5,14 @@ import dayjs from 'dayjs';
 import { useNotes } from '../../../../../hooks/useNotes';
 import Switch from "react-switch"
 import { useTheme } from '../../../../../hooks/useTheme';
-import {ThemeContext} from "styled-components"
+import { ThemeContext } from "styled-components"
 
 
 export function DropDown() {
     const theme = useTheme()
     const notes = useNotes();
 
-    const { colors, title} = useContext(ThemeContext)
+    const { colors, title } = useContext(ThemeContext)
 
 
     function handleDelete() {
@@ -29,18 +29,20 @@ export function DropDown() {
 
     return (
         <S.Wrapper>
-            <Switch
-                onChange={theme.toggleTheme}
-                checked={title === "purple"}
-                checkedIcon={false}
-                uncheckedIcon={false}
-                height={10}
-                width={40}
-                handleDiameter={10}
-                offColor={colors.primary}
-                onColor={colors.primary}
-            >
-            </Switch>
+            <S.SwtichWrapper>
+                Change the theme
+                <Switch
+                    onChange={theme.toggleTheme}
+                    checked={title === "purple"}
+                    checkedIcon={false}
+                    uncheckedIcon={false}
+                    height={12}
+                    width={20}
+                    handleDiameter={10}
+                    offColor={colors.primary}
+                    onColor={colors.primary}
+                    />
+            </S.SwtichWrapper>
             <S.DeleteButton onClick={handleDelete}>
                 Delete Note
                 <BsFillTrashFill size={18} />

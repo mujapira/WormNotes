@@ -5,7 +5,12 @@ background-color:${props => props.theme.colors.backgroundDark};
 padding: 1rem;
 width: 18rem;
 `
-
+export const SwtichWrapper = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-around;
+font-size: 1.2rem;
+`
 export const DeleteButton = styled.button`
 margin-top: .2rem;
 color:${props => props.theme.colors.secundary};
@@ -33,9 +38,11 @@ export const CreatedInfo = styled.span`
 margin-top: .4rem;
 font-size: 1.2rem;
 display: flex;
+font-weight: 100;
 `
 
 export const EditedInfo = styled.span`
+font-weight: 100;
 font-size: 1.2rem;
 display: flex;
 `
