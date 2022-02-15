@@ -7,7 +7,13 @@ height: 100vh;
 width: 30rem;
 background-color: ${props => props.theme.colors.backgroundDark};
 `
-
+export const Circle = styled.div`
+background-color: ${props => props.theme.colors.primary};
+border-radius: 100%;
+width: 10rem;
+justify-content: center;
+align-items: center;
+`
 export const Content = styled.div`
 margin-top: 2rem;
 margin-bottom: 2rem;

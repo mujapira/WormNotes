@@ -1,5 +1,5 @@
 import * as S from './styles';
-import WormLogo from "../../../assets/images/WormNotesLogo.svg"
+import WormLogo from "../../../assets/images/Worm.svg"
 import { useNotes } from '../../../hooks/useNotes';
 
 export function Sidebar() {
@@ -16,7 +16,11 @@ export function Sidebar() {
     <>
       <S.Wrapper>
         <S.Content>
-          <S.Logo src={WormLogo} />
+          
+          <S.Circle>
+          <S.Logo src={WormLogo}/>
+          </S.Circle>
+
           <S.Title>
            My notes</S.Title>
           <S.Separator />
