@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const EDIT_NOTE_HEADER_HEIGHT = '10rem';
 
 export const Header = styled.div`
+width: 100%;
 display: flex;
 flex-wrap: wrap;
 align-items: center;
@@ -31,8 +32,6 @@ border: none;
 border-radius: 5rem;
 cursor: pointer;
 `
-
-
 
 export const Title = styled.h4`
 font-size: 1.8rem;
@@ -63,7 +62,6 @@ justify-content: space-evenly;
     }
 
 `
-
 
 export const ToggleHTML = styled.button`
 margin-top: -3px;
@@ -101,7 +99,10 @@ position: relative;
 `
 
 export const Wrapper = styled.div`
-
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
 `
 
 

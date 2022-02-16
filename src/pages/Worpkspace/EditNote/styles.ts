@@ -2,19 +2,22 @@ import styled from "styled-components"
 
 export const Wrapper = styled.div`
 display: flex;
+
 flex: 1;
 background-color: ${props => props.theme.colors.backgroundLight};
 `
 
 export const Editnote = styled.div`
+width: 100%;
 `
 
 export const Content = styled.div`
 background: transparent;
 display: flex;
 flex-direction: column;
-margin-left: 20vw;
 height: 85vh;
+margin-left: 25%;
+margin-right: 25%;
 `
 
 export const TitleInput = styled.textarea`

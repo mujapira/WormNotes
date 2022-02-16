@@ -6,7 +6,7 @@ justify-content: center;
 align-items: flex-start;
 flex-direction: row;
 height: 100vh;
-width: 20vw;
+width: 30rem;
 background-color: ${props => props.theme.colors.backgroundDark};
 
 @media (max-width:1300px){
