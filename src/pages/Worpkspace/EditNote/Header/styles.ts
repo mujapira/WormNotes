@@ -3,10 +3,19 @@ import styled from "styled-components"
 export const EDIT_NOTE_HEADER_HEIGHT = '10rem';
 
 export const Header = styled.div`
-display: column;
+display: flex;
+flex-wrap: wrap;
 align-items: center;
-padding: 1rem 2rem;
+justify-content: space-between;
+padding: 2rem;
 height: ${EDIT_NOTE_HEADER_HEIGHT};
+
+@media (max-width:1000px){
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+}
 `
 
 export const UserInfo = styled.button`
@@ -23,11 +32,7 @@ border-radius: 5rem;
 cursor: pointer;
 `
 
-export const UserImg = styled.img`
-display: flex;
-border-radius: 5rem;
-overflow: hidden;
-`
+
 
 export const Title = styled.h4`
 font-size: 1.8rem;
@@ -36,16 +41,32 @@ max-width: 30rem;
 text-overflow:  ellipsis;
 white-space: nowrap;
 overflow: hidden;
+
+@media (max-width:1000px){
+    max-width: 20rem;
+
+    }
 `
 
 export const Menu = styled.nav`
 display: flex;
 gap: 1.5rem;
+`
+
+export const HeaderWrapper = styled.div`
+display: column;
+justify-content: space-evenly;
+
+
+@media (max-width:1000px){
+    justify-content: flex-end;
+    }
 
 `
+
+
 export const ToggleHTML = styled.button`
 margin-top: -3px;
-
 border-radius: 1rem;
 width: 4rem;
 height: 3rem;
@@ -71,12 +92,27 @@ color:${props => props.theme.colors.secundary};
 cursor: pointer;
 `
 
-export const Um = styled.div`
+export const WrapperClosedDropDown = styled.div`
 display: flex;
 justify-content: space-between;
 `
-export const Dois = styled.div`
-display: flex;
-justify-content: flex-end;
+export const WrapperOpenedDropDown = styled.div`
+position: relative;
 `
 
+export const Wrapper = styled.div`
+
+`
+
+
+export const SidebarButton = styled.button`
+background-color:${props => props.theme.colors.secundary};
+border-radius: 0.5rem;
+border: none;
+cursor: pointer;
+position: relative;
+top:0;
+right: 0;
+width: 3rem;
+height: 2rem;
+`

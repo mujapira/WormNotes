@@ -1,5 +1,6 @@
 import { useAuth } from '../../../hooks/useAuth';
 import { useNotes } from '../../../hooks/useNotes';
+import { useSidebar } from '../../../hooks/useSidebar';
 import * as S from './styles';
 
 export function CreateNote() {
@@ -9,7 +10,9 @@ export function CreateNote() {
 
     async function handleLogin() {
         if (!user) {
+            
             await signInWithGoogle();
+
         }
     }
 
@@ -19,6 +22,7 @@ export function CreateNote() {
 
     return (
         <>
+
             <S.Title> WormNotes</S.Title>
             <S.Wrapper>
                 {!user &&

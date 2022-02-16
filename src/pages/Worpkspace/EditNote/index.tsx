@@ -4,23 +4,39 @@ import { CreateNote } from "../CreateNote"
 import { useNotes } from '../../../hooks/useNotes';
 import React, { useEffect, useRef } from 'react';
 import { marked } from "marked"
+import { useAuth } from '../../../hooks/useAuth';
+import { Sidebar } from './Sidebar';
 export function EditNote() {
 
     const notes = useNotes()
     const titleRef = useRef<HTMLTextAreaElement>(null)
     const { current } = notes
     const isNoteUntitled = current?.title === "Untitled"
+    const user = useAuth()
+
+
+
 
     useEffect(() => {
         if (!current) return
+
         if (isNoteUntitled) {
             titleRef.current?.focus()
         }
+
     }, [current, isNoteUntitled])
 
     if (!current) {
-        return <CreateNote />
+        return (
+            <>
+                <CreateNote />
+            </>
+
+        )
     }
+
+
+
 
     function handleTitleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         e.target.value = e.target.value.replace(/\n/g, '');
@@ -34,7 +50,9 @@ export function EditNote() {
 
     return (
         <S.Wrapper>
-            <Header />
+            <Sidebar />
+            <S.Editnote>
+                <Header />
                 <S.Content>
                     <S.TitleInput
                         ref={titleRef}
@@ -56,6 +74,7 @@ export function EditNote() {
                         />
                     )}
                 </S.Content>
+            </S.Editnote>
         </S.Wrapper>
     )
 }

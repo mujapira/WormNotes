@@ -30,7 +30,7 @@ export function DropDown() {
     return (
         <S.Wrapper>
             <S.SwtichWrapper>
-                Change the theme
+                Darker Theme
                 <Switch
                     onChange={theme.toggleTheme}
                     checked={title === "purple"}

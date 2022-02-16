@@ -4,10 +4,7 @@ export default createGlobalStyle`
 :root{
     font-size: 62.5%;
 }
-@media(max-width: 640px){
-:root{
-    font-size: 50%;
-}}
+
 
 * { 
     margin: 0;

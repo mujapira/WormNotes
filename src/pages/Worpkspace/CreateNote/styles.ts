@@ -3,10 +3,12 @@ import styled from "styled-components"
 export const Wrapper = styled.div`
 display: flex;
 flex: 1;
+width: 100%;
 margin-top: -4.8rem;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+z-index: 100;
 `
 
 export const Title = styled.h1`

@@ -4,12 +4,16 @@ export const Wrapper = styled.div`
 background-color:${props => props.theme.colors.backgroundDark};
 padding: 1rem;
 width: 18rem;
+position: absolute;
+right:0;
 `
 export const SwtichWrapper = styled.div`
 display: flex;
 align-items: center;
-justify-content: space-around;
+justify-content: flex-start;
+gap: 45px;
 font-size: 1.2rem;
+
 `
 export const DeleteButton = styled.button`
 margin-top: .2rem;
@@ -20,10 +24,11 @@ border: none;
 font-size: 1.2rem;
 display: flex;
 align-items: center;
-justify-content: center;
+justify-content: flex-start;
 cursor: pointer;
 width: 100%;
 padding: 0.1rem;
+
 &:hover{
 background-color:${props => props.theme.colors.primary};
 }
