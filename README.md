@@ -61,7 +61,7 @@ REACT_APP_MESSAGING_SENDER_ID= preencher com dados do firebase
 REACT_APP_APP_ID= preencher com dados do firebase
 ```
 
-<h2 align="center">Links úteis</h1>
+<h2 align="center">🔗Links úteis</h1>
 
 <p>Acesse o projeto online! https://</p>
 
