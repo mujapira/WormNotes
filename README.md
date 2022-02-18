@@ -73,7 +73,7 @@ REACT_APP_APP_ID= preencher com dados do firebase
 - StyledComponents e Icons
 <h2 align="center">🔗Links úteis</h1>
 
-<p>Acesse o projeto online! https://https://worm-notes.vercel.app/</p>
+<p>Acesse o projeto online! https://worm-notes.vercel.app/</p>
 
 <p>Guia para Markdown https://www.markdownguide.org/basic-syntax/</p>
 
