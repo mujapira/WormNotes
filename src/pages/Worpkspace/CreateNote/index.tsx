@@ -1,16 +1,10 @@
-import { useAuth } from '../../../hooks/useAuth';
 import { useNotes } from '../../../hooks/useNotes';
-import { useSidebar } from '../../../hooks/useSidebar';
 import { Sidebar } from '../EditNote/Sidebar';
-import { Header } from '../EditNote/Header';
 
 import * as S from './styles';
 
 export function CreateNote() {
     const notes = useNotes()
-    const { user } = useAuth()
-    const { signInWithGoogle } = useAuth();
-
 
     function handleCreateNoteClick() {
         notes.create()

@@ -7,7 +7,6 @@ import { marked } from "marked"
 import { useAuth } from '../../../hooks/useAuth';
 import { Sidebar } from './Sidebar';
 import { useNavigate } from 'react-router-dom';
-import { NavItem } from './Header/DropDown/styles';
 export function EditNote() {
 
     const notes = useNotes()

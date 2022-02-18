@@ -1,9 +1,7 @@
 import styled from "styled-components"
 
-
 export const WrapperCreate = styled.div`
 display: flex;
-
 `
 
 export const Wrapper = styled.div`

@@ -2,7 +2,6 @@ import * as S from './styles';
 import WormLogo from "../../../../assets/images/Worm.svg"
 import { useNotes } from '../../../../hooks/useNotes';
 import { useAuth } from '../../../../hooks/useAuth';
-import { useState } from 'react';
 import { useSidebar } from '../../../../hooks/useSidebar';
 
 export function Sidebar() {

@@ -1,12 +1,11 @@
 import * as S from './styles';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { BsFillTrashFill } from 'react-icons/bs'
 import dayjs from 'dayjs';
 import { useNotes } from '../../../../../hooks/useNotes';
 import Switch from "react-switch"
 import { useTheme } from '../../../../../hooks/useTheme';
 import { ThemeContext } from "styled-components"
-
 
 export function DropDown() {
     const theme = useTheme()

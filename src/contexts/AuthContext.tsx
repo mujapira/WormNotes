@@ -1,7 +1,6 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { auth } from "../services/firebase";
-import { usePersistedState } from '../hooks/usePersistedState';
 type User = {
   id: string;
   name: string;

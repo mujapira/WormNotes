@@ -51,6 +51,4 @@ font-size: 1.2rem;
 display: flex;
 `
 
-export const NavItem = styled.div`
 
-`
