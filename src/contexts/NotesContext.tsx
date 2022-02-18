@@ -65,7 +65,7 @@ export function NotesProvider({ children }: NotesProviderProps) {
         return () => {
             off(notesRef)
         }
-    }, [current, user?.id])
+    }, [current, user?.id, setNotes])
 
     async function create(): Promise<void> {
         const dateNow = new Date();

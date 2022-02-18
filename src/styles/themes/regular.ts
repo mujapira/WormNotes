@@ -1,4 +1,4 @@
-export default {
+const regular = {
   title: "regular",
   colors: {
     backgroundDark: "#2f3437",
@@ -8,3 +8,5 @@ export default {
     separtor: "##373C3F",
   }
 }
+
+export default regular

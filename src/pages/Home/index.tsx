@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 import { useAuth } from '../../hooks/useAuth';
 
 export function Home() {
-    const { signInWithGoogle, user } = useAuth();
+    const { signInWithGoogle} = useAuth();
     let navigate = useNavigate()
 
     function handleLogIn() {
