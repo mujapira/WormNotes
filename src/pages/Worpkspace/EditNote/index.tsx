@@ -17,9 +17,6 @@ export function EditNote() {
     const { user, isLoading } = useAuth();
     let navigate = useNavigate()
 
-
-
-
     useEffect(() => {
 
         if (!isLoading && !user) {
@@ -28,12 +25,11 @@ export function EditNote() {
         }
 
         if (!current) return
-        if (isNoteUntitled) {
+        if (isNoteUntitled && !current.content.length) {
             titleRef.current?.focus()
         }
 
     }, [current, isNoteUntitled, isLoading])
-
 
     if (!current) {
         return (
