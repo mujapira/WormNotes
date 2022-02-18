@@ -22,8 +22,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 Clone o projeto e acesse a pasta.
 
 ```bash
-$ git clone https://github.com/rocketseat-education/nlw-06-reactjs
-$ cd nlw-06-reactjs
+$ git clone https://github.com/mujapira/WormNotes.git
+$ cd WormNotesOfc
 ```
 
 Para iniciá-lo, siga os passos abaixo:
