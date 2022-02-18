@@ -38,7 +38,7 @@ Clone o projeto e acesse a pasta.
 
 ```bash
 $ git clone https://github.com/mujapira/WormNotes.git
-$ cd WormNotesOfc
+$ cd WormNotes
 ```
 
 Para iniciá-lo, siga os passos abaixo:
