@@ -62,11 +62,15 @@ REACT_APP_APP_ID= preencher com dados do firebase
 ```
 
 <h2 align="center">📚Aprendizados</h1>
-
 - useEffect
 - useState
 - useContext
 - Tipagem com TypeScript
+- Renderização condicional
+- CSS compatível com usuários mobile
+- Hooks
+- ReacRouterDOM
+- StyledComponents e Icons
 <h2 align="center">🔗Links úteis</h1>
 
 <p>Acesse o projeto online! https://</p>
