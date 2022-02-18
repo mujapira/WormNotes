@@ -107,7 +107,7 @@ export function NotesProvider({ children }: NotesProviderProps) {
     }
 
     function deleteById(note: Partial<Note>): void {
-        setNotes((prevNotes) => prevNotes.filter((note) => note.id !== note.id))
+        setNotes((prevNotes) => prevNotes.filter((prevNote) => prevNote.id !== note.id))
         if (current?.id === note.id) {
             setCurrent(undefined)
             fbRemove(ref(database, `notes/${note?.id}`))

@@ -19,7 +19,6 @@ export function EditNote() {
     useEffect(() => {
 
         if (!isLoading && !user) {
-
             navigate(`/home`)
         }
 
@@ -28,7 +27,7 @@ export function EditNote() {
             titleRef.current?.focus()
         }
 
-    }, [current, isNoteUntitled, isLoading])
+    }, [current, isNoteUntitled, isLoading, navigate, user])
 
     if (!current) {
         return (
