@@ -6,37 +6,41 @@ import React, { useEffect, useRef } from 'react';
 import { marked } from "marked"
 import { useAuth } from '../../../hooks/useAuth';
 import { Sidebar } from './Sidebar';
+import { useNavigate } from 'react-router-dom';
+import { NavItem } from './Header/DropDown/styles';
 export function EditNote() {
 
     const notes = useNotes()
     const titleRef = useRef<HTMLTextAreaElement>(null)
     const { current } = notes
     const isNoteUntitled = current?.title === "Untitled"
-    const user = useAuth()
+    const { user, isLoading } = useAuth();
+    let navigate = useNavigate()
 
 
 
 
     useEffect(() => {
-        if (!current) return
 
+        if (!isLoading && !user) {
+            
+            navigate(`/home`)
+        }
+
+        if (!current) return
         if (isNoteUntitled) {
             titleRef.current?.focus()
         }
 
-    }, [current, isNoteUntitled])
+    }, [current, isNoteUntitled, isLoading])
+
 
     if (!current) {
         return (
-            <>
-                <CreateNote />
-            </>
-
+            <CreateNote />
         )
+
     }
-
-
-
 
     function handleTitleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         e.target.value = e.target.value.replace(/\n/g, '');
@@ -50,6 +54,7 @@ export function EditNote() {
 
     return (
         <S.Wrapper>
+
             <Sidebar />
             <S.Editnote>
                 <Header />

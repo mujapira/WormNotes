@@ -8,6 +8,8 @@ import { DropDown } from './DropDown';
 import { useState } from 'react';
 import { useAuth } from '../../../../hooks/useAuth';
 import { useSidebar } from '../../../../hooks/useSidebar';
+
+
 export function Header() {
     const notes = useNotes()
     const userinfo = useAuth()
@@ -17,6 +19,7 @@ export function Header() {
 
     function handleToggleShowAsHtml() {
         notes.toggleShowAsHtml();
+        
     }
 
     if (!current) return null
@@ -50,8 +53,9 @@ export function Header() {
                             </S.ToggleDropDown>
                         </S.Menu >
                     </S.WrapperClosedDropDown>
+
                     <S.WrapperOpenedDropDown>
-                        {!open &&
+                        {open &&
                             <DropDown />
                         }
                     </S.WrapperOpenedDropDown>

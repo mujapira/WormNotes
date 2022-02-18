@@ -35,7 +35,7 @@ const UNTITLED_NOTE_TITLE = 'Untitled';
 
 export function NotesProvider({ children }: NotesProviderProps) {
     const [current, setCurrent] = useState<Note>();
-    const [notes, setNotes] = useState<Note[]>([]);
+    const [notes, setNotes] = usePersistedState<Note[]>("notes", []);
     const [showAsHtml, setShowAsHtml] = useState(false);
 
     useEffect(() => {

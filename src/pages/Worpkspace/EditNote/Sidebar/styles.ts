@@ -6,16 +6,10 @@ justify-content: center;
 align-items: flex-start;
 flex-direction: row;
 height: 100vh;
-width: 30rem;
+width: 20vw;
 background-color: ${props => props.theme.colors.backgroundDark};
-
-@media (max-width:1300px){
-    width: 20rem;
-    }
-    @media (max-width:640px){
-    width: 15rem;
-    }
 `
+
 export const Circle = styled.div`
 background-color: ${props => props.theme.colors.primary};
 border-radius: 50%;
@@ -50,16 +44,20 @@ display: flex;
 width: 2rem;
 border-radius: 5rem;
 overflow: hidden;
+
 `
 
 export const Title = styled.span`
-gap: 10px;
+gap:5px;
 display: flex;
 text-align: center;
-font-size:1.8rem;
-margin:2rem;
+font-size:1.4rem;
+margin:1.5rem;
 justify-content: center;
 align-items: center;
+@media (max-width:640px){
+    font-size: 1.2rem;
+    }
 
 `
 
@@ -86,23 +84,28 @@ border: none;
     }
     @media (max-width:650px){
     width: 10rem;
+    font-size: 1.2rem;
     }
 `
 
 export const NewNoteButton = styled.button`
-height: 4rem;
-width: fit-content;
+height: fit-content;
+width: 15vw;
 border-radius: 0.4rem;
-padding: 0 2rem;
+padding: .5rem 2rem;
 border: none;
 color:${props => props.theme.colors.secundary};
 background: ${props => props.theme.colors.primary};
 cursor: pointer;
+@media (max-width:640px){
+    font-size: 1.2rem;
+    }
+
 `
 
 export const SeparatorWrapper = styled.div`
 display: flex;
-width: 100%;
+width: 20vw;
 justify-content: center;
 align-items: center;
 `

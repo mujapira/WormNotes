@@ -5,32 +5,17 @@ export const EDIT_NOTE_HEADER_HEIGHT = '10rem';
 export const Header = styled.div`
 width: 100%;
 display: flex;
-flex-wrap: wrap;
 align-items: center;
 justify-content: space-between;
 padding: 2rem;
 height: ${EDIT_NOTE_HEADER_HEIGHT};
 
-@media (max-width:1000px){
+@media (max-width:640px){
+width: 100%;
 display: flex;
 flex-wrap: wrap;
 align-items: center;
-justify-content: space-between;
 }
-`
-
-export const UserInfo = styled.button`
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 1rem;
-background: transparent;
-display:flex;
-width: 2.5rem;
-height: 2.5rem;
-border: none;
-border-radius: 5rem;
-cursor: pointer;
 `
 
 export const Title = styled.h4`
@@ -43,8 +28,8 @@ overflow: hidden;
 
 @media (max-width:1000px){
     max-width: 20rem;
-
     }
+
 `
 
 export const Menu = styled.nav`

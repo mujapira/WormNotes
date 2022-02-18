@@ -16,7 +16,7 @@ export function SidebarProvider({ children }: SidebarProviderProps) {
     const [sidebar, setSidebar] = useState(true)
 
     const toggleSidebar = () => {
-        setSidebar(sidebar === false ? true : false)
+        setSidebar(sidebar === true ? false : true)
         console.log(sidebar)
     }
 

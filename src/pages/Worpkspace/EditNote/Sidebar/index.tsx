@@ -29,7 +29,9 @@ export function Sidebar() {
             </S.Circle>
             <S.Title>
               <S.UserImg src={userinfo.user?.avatar} />
-              {userinfo.user?.name}'s notes
+              <span>
+                {userinfo.user?.name}
+              </span>
             </S.Title>
             <S.SeparatorWrapper>
               <S.Separator />
@@ -47,9 +49,7 @@ export function Sidebar() {
             </S.NewNoteButton>
           </S.Content>
         </S.Wrapper>
-
       }
-
     </>
   )
 }

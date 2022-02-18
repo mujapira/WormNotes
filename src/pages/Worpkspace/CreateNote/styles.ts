@@ -1,5 +1,11 @@
 import styled from "styled-components"
 
+
+export const WrapperCreate = styled.div`
+display: flex;
+
+`
+
 export const Wrapper = styled.div`
 display: flex;
 flex: 1;
@@ -9,12 +15,16 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 z-index: 100;
+padding: 5rem;
+justify-content: center;
+align-items: center;
 `
 
 export const Title = styled.h1`
 text-align: center;
 font-size:4rem;
 margin-top: 2rem;
+padding-bottom: 20rem;
 `
 
 export const Button = styled.button`

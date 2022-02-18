@@ -41,7 +41,7 @@ export function DropDown() {
                     handleDiameter={10}
                     offColor={colors.primary}
                     onColor={colors.primary}
-                    />
+                />
             </S.SwtichWrapper>
             <S.DeleteButton onClick={handleDelete}>
                 Delete Note
