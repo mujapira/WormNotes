@@ -62,6 +62,7 @@ REACT_APP_APP_ID= preencher com dados do firebase
 ```
 
 <h2 align="center">📚Aprendizados</h1>
+
 - useEffect
 - useState
 - useContext
