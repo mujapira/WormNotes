@@ -1,6 +1,6 @@
 import * as S from './styles';
 import wormLogoImg from "../../assets/images/Worm.svg";
-import googleIconImg from "../../assets/images/minhoca.png";
+import googleIconImg from "../../assets/images/google-icon.svg";
 import { useNavigate } from 'react-router';
 import { useAuth } from '../../hooks/useAuth';
 
