@@ -1,13 +1,18 @@
-<h1 align="center">Worm Notes</h1>
+<h1 align="center">
+<img src="https://user-images.githubusercontent.com/89225210/154762813-46150860-38a3-46f9-9f12-edf15ebafda5.png" width="70px"/>
+<br>
+ Worm Notes
+</h1>
+  
 Aplicação em React que permite criar e editar notas. Busquei inpiração no App Ideas e cobri as principais funcionalidade sugeridas e também adicionei novas.
 
-<h2 align="center">Sobre</h1>
+<h2 align="center">💻Projeto</h1>
 
-<h4> Principais funcionalidades do app-ideas </h4>
+<h4> 🔨 Principais funcionalidades do app-ideas </h4>
 
 - [x] Criar, editar e deletar notas 
 
-<h4> Funcionalidades adicionais </h4>
+<h4> 🔨 Funcionalidades adicionais </h4>
 
 - [x] Tema Light e Dark 
 - [x] Responsividade com mobile 
@@ -20,12 +25,14 @@ Aplicação em React que permite criar e editar notas. Busquei inpiração no Ap
 <img src="./src/assets/images/ReadmeWorm.jpg">
 </a>
 
-Projeto desenvolvido com as seguintes tecnologias:
-- [React](https://reactjs.org)
-- [Firebase](https://firebase.google.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+✨ Desenvolvido com as seguintes tecnologias:
+- [React] <img src="https://user-images.githubusercontent.com/89225210/154761002-389268dc-1404-4e8e-96ed-6f83916ae9ef.png" height="15px"/>
+ (https://reactjs.org)
+- [Firebase] <img src="https://user-images.githubusercontent.com/89225210/154761829-2e2fb9ea-eaa6-447e-a8a6-674853d8de7c.png" height="15px"/>(https://firebase.google.com/)
+- [TypeScript] <img src="https://user-images.githubusercontent.com/89225210/154760385-8c7a5ab6-c15e-4dee-b285-d0ca77952d29.png" height="15px"/> (https://www.typescriptlang.org/)
 
-<h2 align="center">Como utilizar o repositório</h1>
+<h2 align="center">🏃‍♂️Instruções</h1>
+
 
 Clone o projeto e acesse a pasta.
 
@@ -53,6 +60,7 @@ REACT_APP_STORAGE_BUCKET= preencher com dados do firebase
 REACT_APP_MESSAGING_SENDER_ID= preencher com dados do firebase
 REACT_APP_APP_ID= preencher com dados do firebase
 ```
+
 <h2 align="center">Links úteis</h1>
 
 <p>Acesse o projeto online! https://</p>
