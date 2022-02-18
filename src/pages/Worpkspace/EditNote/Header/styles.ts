@@ -3,33 +3,31 @@ import styled from "styled-components"
 export const EDIT_NOTE_HEADER_HEIGHT = '10rem';
 
 export const Header = styled.div`
-width: 100%;
 display: flex;
+flex-wrap: wrap;
 align-items: center;
 justify-content: space-between;
 padding: 2rem;
 height: ${EDIT_NOTE_HEADER_HEIGHT};
-
-@media (max-width:640px){
-width: 100%;
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-}
 `
+export const Wrapper = styled.div`
+display: flex;
+flex-wrap:wrap;
+justify-content: center;
+align-items: center;
+gap: 1rem;
 
+`
 export const Title = styled.h4`
 font-size: 1.8rem;
 font-weight:normal;
 max-width: 30rem;
-text-overflow:  ellipsis;
+text-overflow: ellipsis;
 white-space: nowrap;
 overflow: hidden;
-
-@media (max-width:1000px){
-    max-width: 20rem;
-    }
-
+@media (max-width:800px){
+display: none;
+}
 `
 
 export const Menu = styled.nav`
@@ -40,12 +38,6 @@ gap: 1.5rem;
 export const HeaderWrapper = styled.div`
 display: column;
 justify-content: space-evenly;
-
-
-@media (max-width:1000px){
-    justify-content: flex-end;
-    }
-
 `
 
 export const ToggleHTML = styled.button`
@@ -62,6 +54,7 @@ border: none;
 color:${props => props.theme.colors.secundary};
 cursor: pointer;
 `
+
 export const ToggleDropDown = styled.button`
 border-radius: 1rem;
 width: 4rem;
@@ -82,14 +75,6 @@ justify-content: space-between;
 export const WrapperOpenedDropDown = styled.div`
 position: relative;
 `
-
-export const Wrapper = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 1rem;
-`
-
 
 export const SidebarButton = styled.button`
 background-color:${props => props.theme.colors.secundary};

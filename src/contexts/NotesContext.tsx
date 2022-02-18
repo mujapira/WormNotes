@@ -1,5 +1,6 @@
 import { onValue, ref, off, remove as fbRemove, push, update as fbUpdate } from 'firebase/database';
 import { createContext, ReactNode, useEffect, useState } from 'react';
+import { useAuth } from '../hooks/useAuth';
 import { usePersistedState } from '../hooks/usePersistedState';
 import { database } from '../services/firebase';
 
@@ -37,6 +38,7 @@ export function NotesProvider({ children }: NotesProviderProps) {
     const [current, setCurrent] = useState<Note>();
     const [notes, setNotes] = usePersistedState<Note[]>("notes", []);
     const [showAsHtml, setShowAsHtml] = useState(false);
+    const { user } = useAuth();
 
     useEffect(() => {
         const notesRef = ref(database, `notes/`)
@@ -63,7 +65,7 @@ export function NotesProvider({ children }: NotesProviderProps) {
         return () => {
             off(notesRef)
         }
-    }, [current])
+    }, [current, user?.id])
 
     async function create(): Promise<void> {
         const dateNow = new Date();

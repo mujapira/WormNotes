@@ -1,11 +1,9 @@
 import styled from "styled-components"
 
-
 export const Wrapper = styled.div`
 color:${props => props.theme.colors.secundary};
 display: flex;
 min-height: 100vh;
-
 `
 
 export const Content = styled.div`

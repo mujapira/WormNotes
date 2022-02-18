@@ -20,7 +20,7 @@ export function EditNote() {
     useEffect(() => {
 
         if (!isLoading && !user) {
-            
+
             navigate(`/home`)
         }
 
@@ -50,7 +50,6 @@ export function EditNote() {
 
     return (
         <S.Wrapper>
-
             <Sidebar />
             <S.Editnote>
                 <Header />

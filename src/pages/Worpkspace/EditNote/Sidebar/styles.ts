@@ -6,7 +6,7 @@ justify-content: center;
 align-items: flex-start;
 flex-direction: row;
 height: 100vh;
-width: 20vw;
+width: 300px;
 background-color: ${props => props.theme.colors.backgroundDark};
 `
 
@@ -17,10 +17,6 @@ height: 10rem;
 width: 10rem;
 justify-content: center;
 align-items: center;
-@media (max-width:640px){
-    width: 6rem;
-    height: 6rem;
-    }
 `
 export const Content = styled.div`
 margin-top: 2rem;
@@ -33,10 +29,6 @@ align-items: center;
 export const Logo = styled.img`
 width: 100px;
 width: 100px;
-@media (max-width:640px){
-    width: 6rem;
-    height: 6rem;
-    }
 
 `
 export const UserImg = styled.img`
@@ -55,9 +47,6 @@ font-size:1.4rem;
 margin:1.5rem;
 justify-content: center;
 align-items: center;
-@media (max-width:640px){
-    font-size: 1.2rem;
-    }
 
 `
 
@@ -70,42 +59,32 @@ margin-top: 2rem;
 export const NoteItem = styled.button`
 color:${props => props.theme.colors.secundary};
 text-align: center;
-width: 100%;
 height: 4rem;
 background: transparent;
-max-width: 26rem;
-margin: auto;
+max-width: 200px;
+
 text-overflow: ellipsis;
 white-space: nowrap;
 overflow: hidden;
 border: none;
-@media (max-width:1300px){
-    width: 15rem;
-    }
-    @media (max-width:650px){
-    width: 10rem;
-    font-size: 1.2rem;
-    }
 `
 
 export const NewNoteButton = styled.button`
 height: fit-content;
-width: 15vw;
+width: 120px;
 border-radius: 0.4rem;
 padding: .5rem 2rem;
 border: none;
 color:${props => props.theme.colors.secundary};
 background: ${props => props.theme.colors.primary};
 cursor: pointer;
-@media (max-width:640px){
-    font-size: 1.2rem;
-    }
+
 
 `
 
 export const SeparatorWrapper = styled.div`
 display: flex;
-width: 20vw;
+width: 200px;
 justify-content: center;
 align-items: center;
 `

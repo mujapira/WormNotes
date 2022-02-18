@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const Wrapper = styled.div`
 background-color:${props => props.theme.colors.backgroundDark};
 padding: 1rem;
-width: 18rem;
 position: absolute;
 right:0;
 `

@@ -2,13 +2,13 @@ import styled from "styled-components"
 
 export const Wrapper = styled.div`
 display: flex;
-
-flex: 1;
+width: 100%;
 background-color: ${props => props.theme.colors.backgroundLight};
 `
 
 export const Editnote = styled.div`
 width: 100%;
+min-width: 310px;
 `
 
 export const Content = styled.div`
@@ -16,11 +16,13 @@ background: transparent;
 display: flex;
 flex-direction: column;
 height: 85vh;
-margin-left: 25%;
-margin-right: 25%;
+width:50%;
+min-width: 300px;
+margin: 0 auto;
 `
 
 export const TitleInput = styled.textarea`
+width: 100%;
 border:none;
 background: transparent;
 font-size: 4rem;
@@ -33,7 +35,6 @@ color:${props => props.theme.colors.secundary};
 
 export const ContentInput = styled.textarea`
 height: 100vh;
-width: 40vw;
 border:none;
 resize: none;
 line-height: 2.4rem;
@@ -59,7 +60,7 @@ margin-left: -18px;
 }
 hr{
     border:revert;
-    border-color: ${props=>props.theme.colors.secundary};
+    border-color: ${props => props.theme.colors.secundary};
 }
 code{
     padding: .5rem 1rem;
