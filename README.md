@@ -53,3 +53,5 @@ REACT_APP_APP_ID= preencher com dados do firebase
 <p>Acesse o link para ver o projeto online! https://</p>
 
 <p>Guia para Markdown https://www.markdownguide.org/basic-syntax/</p>
+
+link do app-ideas https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Notes-App.md
