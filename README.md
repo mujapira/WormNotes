@@ -1,11 +1,13 @@
 <h1 align="center">Worm Notes</h1>
-Aplicação em React que permite criar e editar notas. Busquei inpiração no App Ideas e cobri as seguintes funcionalidades:
+Aplicação em React que permite criar e editar notas. Busquei inpiração no App Ideas e cobri as principais funcionalidade sugeridas e também adicionei novas.
 
-<h4> Principais do app-ideas </h4>
+<h2 align="center">Sobre</h1>
+
+<h4> Principais funcionalidades do app-ideas </h4>
 
 - [x] Criar, editar e deletar notas 
 
-<h4> Adicionais </h4>
+<h4> Funcionalidades adicionais </h4>
 
 - [x] Tema Light e Dark 
 - [x] Responsividade com mobile 
@@ -18,10 +20,12 @@ Aplicação em React que permite criar e editar notas. Busquei inpiração no Ap
 <img src="./src/assets/images/ReadmeWorm.jpg">
 </a>
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+Projeto desenvolvido com as seguintes tecnologias:
 - [React](https://reactjs.org)
 - [Firebase](https://firebase.google.com/)
 - [TypeScript](https://www.typescriptlang.org/)
+
+<h2 align="center">Como utilizar o repositório</h1>
 
 Clone o projeto e acesse a pasta.
 
@@ -49,9 +53,10 @@ REACT_APP_STORAGE_BUCKET= preencher com dados do firebase
 REACT_APP_MESSAGING_SENDER_ID= preencher com dados do firebase
 REACT_APP_APP_ID= preencher com dados do firebase
 ```
+<h2 align="center">Links úteis</h1>
 
-<p>Acesse o link para ver o projeto online! https://</p>
+<p>Acesse o projeto online! https://</p>
 
 <p>Guia para Markdown https://www.markdownguide.org/basic-syntax/</p>
 
-Link do app-ideas https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Notes-App.md
+app-ideas https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Notes-App.md
