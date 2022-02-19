@@ -17,7 +17,7 @@ Aplicação em React que permite criar e editar notas. Busquei inpiração no Ap
 - [x] Tema Light e Dark 
 - [x] Responsividade com mobile 
 - [x] Login com google 
-- [x] Banco de dados do Firebase
+- [x] Firebase Realtime Database
 - [x] Data que a nota foi criada e modificada 
 - [x] Visualizar em Markdown 
 
