@@ -49,9 +49,9 @@ export const WormImage = styled.img`
     padding:10px;
 
     @media (max-width:1000px){
-        max-width: 40%;
-        height: 100%;
-        padding:10px;
+        max-width: 50%;
+    height: 50%;
+    padding:10px;
     }
 `
 

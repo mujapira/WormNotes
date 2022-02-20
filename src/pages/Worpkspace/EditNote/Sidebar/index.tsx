@@ -1,5 +1,5 @@
 import * as S from './styles';
-import WormLogo from "../../../../assets/images/Worm.svg"
+import WormLogo from "../../../../assets/images/MinhocaFundoless.png"
 import { useNotes } from '../../../../hooks/useNotes';
 import { useAuth } from '../../../../hooks/useAuth';
 import { useSidebar } from '../../../../hooks/useSidebar';
