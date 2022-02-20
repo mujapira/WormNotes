@@ -41,7 +41,7 @@ export function NotesProvider({ children }: NotesProviderProps) {
     const { user } = useAuth();
 
     useEffect(() => {
-        const notesRef = ref(database, `notes/`)
+        const notesRef = ref(database, `users/${user?.id}/notes/`)
         //onValue observa a notesref
         onValue(notesRef, (note) => {
             //val pega a informação imediata do banco
@@ -75,7 +75,7 @@ export function NotesProvider({ children }: NotesProviderProps) {
             createdAt: dateNow,
             updatedAt: dateNow,
         };
-        await push(ref(database, 'notes/'), note)
+        await push(ref(database, `users/${user?.id}/notes/`), note)
         setShowAsHtml(false);
         const lastNote = notes[notes.length - 1]
         setCurrent(lastNote)
@@ -103,14 +103,14 @@ export function NotesProvider({ children }: NotesProviderProps) {
             }
             return updatedNote
         })
-        fbUpdate(ref(database, `notes/${note?.id}`), note)
+        fbUpdate(ref(database, `users/${user?.id}/notes/${note?.id}`), note)
     }
 
     function deleteById(note: Partial<Note>): void {
         setNotes((prevNotes) => prevNotes.filter((prevNote) => prevNote.id !== note.id))
         if (current?.id === note.id) {
             setCurrent(undefined)
-            fbRemove(ref(database, `notes/${note?.id}`))
+            fbRemove(ref(database, `users/${user?.id}/notes/${note?.id}`))
         }
     }
 
